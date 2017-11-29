@@ -1,0 +1,6 @@
+1.EasyUI自定义icon:http://blog.csdn.net/xp541130126/article/details/70170983
+2.Shiro验证---后台登录
+3.安全退出后台,修改用户密码---MD5保存密码
+4.修改用户信息----上传图片---个人头像
+5.文章管理--文章CRUD---分别使用UE和KE编辑器
+5.图片管理--图片CRUD--jQuery图片上传插件Uploadify

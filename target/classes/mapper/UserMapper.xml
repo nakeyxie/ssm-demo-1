@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhou.ssm.dao.UserDao">
+    <!--
+        返回结果映射
+        如果开启驼峰命名转换且命名规范该段代码可以不写
+        因为配置别名 所以type属性使用的是mybatis-config中的别名
+        -->
+    <resultMap type="User" id="UserResult">
+        <id property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+        <result property="imagename" column="imagename"/>
+    </resultMap>
+    <!--  定义字段集合 -->
+    <sql id="UserColumns">
+        id,username,password,imagename
+    </sql>
+    <!-- 接口中getBloggerData 具体实现-->
+    <select id="getUserData" resultMap="UserResult">
+        select <include refid="UserColumns"/> from user where id = 1
+    </select>
+     <select id="getUserByName" parameterType="java.lang.String" resultMap="UserResult">
+        SELECT <include refid="UserColumns"/> from user
+        where username=#{username}
+    </select>
+    <update id="updateUser" parameterType="User">
+        UPDATE user
+        <set>
+        	<if test="username!=null and username!=''">
+        		username=#{username},
+        	</if>
+            <if test="password!=null and password!=''">
+                password=#{password},
+            </if>
+            <if test="imagename!=null and imagename!=''">
+                imagename=#{imagename},
+            </if>
+        </set>
+        where id=1
+    </update>
+</mapper>
