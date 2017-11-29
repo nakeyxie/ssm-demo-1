@@ -1,4 +1,4 @@
-## 页面展示:
+## 页面展示：
 
 ![](https://github.com/zmdlbr/MyPictures/blob/04fab94ae8137c7017aa2da112635049c454a9ed/SSM-DEMO/SSM-DEMO.png?raw=true)
 
@@ -10,6 +10,6 @@
 * 文章管理--文章CRUD---分别使用UE和KE编辑器
 * 图片管理--图片CRUD--JQuery图片上传插件Uploadify
 
-## 框架实现:
+## 框架实现：
 
 EasyUI+Spring+SpringMVC+MyBatis
