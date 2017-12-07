@@ -18,7 +18,7 @@
     <sql id="UserColumns">
         id,username,password,imagename
     </sql>
-    <!-- 接口中getBloggerData 具体实现-->
+    <!-- 接口中getUserData 具体实现-->
     <select id="getUserData" resultMap="UserResult">
         select <include refid="UserColumns"/> from user where id = 1
     </select>
