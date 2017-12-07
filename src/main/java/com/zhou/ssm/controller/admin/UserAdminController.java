@@ -66,7 +66,7 @@ public class UserAdminController {
 		return "redirect:/admin/login.jsp";
 	}
 	
-	//更新博主密码
+	//更新用户密码
     @RequestMapping(value = "/modtifyPassword",method = RequestMethod.POST)
     public String modityUserPassword(User user,HttpServletResponse response) throws Exception {
         //加密
