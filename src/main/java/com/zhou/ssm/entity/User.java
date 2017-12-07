@@ -5,7 +5,7 @@ import java.io.Serializable;
 import org.springframework.stereotype.Component;
 
 /**
- * @Description 博主信息实体类
+ * @Description 用户信息实体类
  */
 @Component  //注册bean 为spring容器管理
 public class User implements Serializable {
