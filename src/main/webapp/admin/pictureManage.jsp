@@ -260,7 +260,7 @@
             //回调函数
             'onComplete': function (evt, queueID, fileObj, response, data) {
                 var imgUrl = JSON.parse(response).data;
-                $("#img11").attr("src", imgUrl);
+                $("#img11").attr("src", imgUrl);//实现后台预览功能
                 $("#input11").val(imgUrl);
                 $("#pic11").removeAttr("style");
                 $("#img11").removeAttr("style");
