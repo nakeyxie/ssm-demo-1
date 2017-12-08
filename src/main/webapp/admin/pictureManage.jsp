@@ -243,10 +243,10 @@
 
     function initUploadify() {
         $("#uploadify2").uploadify({
-            'uploader': 'swf/uploadify2.swf', 			//flash文件的相对路径
-            'script': '../images',  				//后台处理程序的路径
+            'uploader': 'static/images/uploadify.swf', 			//flash文件的相对路径
+            'script': '/images',  				//后台处理程序的路径
             'fileDataName': 'file', 						//设置上传文件名称,默认为Filedata
-            'cancelImg': 'images/cancel.png', 			//每一个文件上的关闭按钮图标
+            'cancelImg': 'static/images/uploadify-cancel.png', 			//每一个文件上的关闭按钮图标
             'queueID': 'div_progress', 					//文件队列的ID，该ID与存放文件队列的div的ID一致
             'queueSizeLimit': 1, 							//当允许多文件生成时，设置选择文件的个数，默认值：999
             'fileDesc': '*.jpg;*.gif;*.png;*.ppt;*.pdf;*.jpeg', 	//用来设置选择文件对话框中的提示文本
