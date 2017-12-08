@@ -85,7 +85,7 @@ public class UserAdminController {
     
   //更新用户信息
     @RequestMapping(value = "/save",method = RequestMethod.POST)
-    public String saveBlogger(@RequestParam(value = "imageFile",required = false) MultipartFile imageFile, User user,
+    public String saveUser(@RequestParam(value = "imageFile",required = false) MultipartFile imageFile, User user,
                               HttpServletResponse response,HttpServletRequest request) throws Exception {
         //判断是否有上图片 有就更新
         if(!imageFile.isEmpty()){
