@@ -77,44 +77,6 @@ public class PictureController {
     }
 
     /**
-     * 查找相应的数据集合
-     *
-     * @param page
-     * @param rows
-     * @param picture
-     * @return
-     * @throws Exception
-     */
-    @RequestMapping(value = "", method = RequestMethod.GET)
-    public Result list(
-            @RequestParam(value = "page", required = false) String page,
-            @RequestParam(value = "rows", required = false) String rows,
-            Picture picture) throws Exception {
-        Map<String, Object> map = new HashMap<String, Object>();
-        if (page != null && rows != null) {
-            PageBean pageBean = new PageBean(Integer.parseInt(page),
-                    Integer.parseInt(rows));
-            map.put("start", pageBean.getStart());
-            map.put("size", pageBean.getPageSize());
-        }
-        if (picture != null) {
-            map.put("id", picture.getId() + "");
-            map.put("type", picture.getType() + "");
-            map.put("grade", picture.getGrade() + "");
-        }
-        List<Picture> pictureList = pictureService.findPicture(map);
-        Result result = ResultGenerator.genSuccessResult();
-        Long total = pictureService.getTotalPicture(map);
-        Map data = new HashMap();
-        data.put("rows", pictureList);
-        data.put("total", total);
-        log.info("request: admin/picture/list , map: " + map.toString());
-        result.setData(data);
-        return result;
-    }
-
-
-    /**
      * 添加
      *
      * @param picture
