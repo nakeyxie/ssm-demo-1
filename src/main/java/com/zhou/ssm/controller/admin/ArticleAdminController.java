@@ -75,44 +75,6 @@ public class ArticleAdminController {
     }
 
     /**
-     * 查找相应的数据集合
-     *
-     * @param page
-     * @param rows
-     * @param article
-     * @return
-     * @throws Exception
-     */
-    @RequestMapping(value = "", method = RequestMethod.GET)
-    @ResponseBody
-    public Result list(
-            @RequestParam(value = "page", required = false) String page,
-            @RequestParam(value = "rows", required = false) String rows,
-            HttpServletResponse response,
-            Article article) throws Exception {
-        Map<String, Object> map = new HashMap<String, Object>();
-        if (page != null && rows != null) {
-            PageBean pageBean = new PageBean(Integer.parseInt(page),
-                    Integer.parseInt(rows));
-            map.put("start", pageBean.getStart());
-            map.put("size", pageBean.getPageSize());
-        }
-        if (article != null) {
-        	//格式化用户查询搜索:"%str%"
-            map.put("articleTitle",StringUtil.formatLike(article.getArticleTitle()));
-        }
-        List<Article> articleList = articleService.findArticle(map);
-        Long total = articleService.getTotalArticle(map);
-
-        Result result = ResultGenerator.genSuccessResult();
-        Map data = new HashMap();
-        data.put("rows", articleList);
-        data.put("total", total);
-        result.setData(data);
-        return result;
-    }
-
-    /**
      * 添加
      *
      * @param article
