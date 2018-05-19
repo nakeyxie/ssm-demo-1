@@ -13,7 +13,7 @@ public interface UserService {
     
     /**
      * 更新用户信息
-     * @param blogger
+     * @param user
      * @return
      */
     Integer updateUser(User user);
