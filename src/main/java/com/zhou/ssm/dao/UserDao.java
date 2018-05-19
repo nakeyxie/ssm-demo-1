@@ -24,7 +24,7 @@ public interface UserDao {
     
     /**
      * 更新用户信息
-     * @param blogger
+     * @param user
      * @return
      */
     Integer updateUser(User user);
